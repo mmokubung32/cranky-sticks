@@ -3,7 +3,7 @@ const CATS={A:"Advice",J:"Joke",L:"Lesson",S:"Satire",R:"Sarcasm",C:"Cranky"};
 const PAL=[["Highlighter","#ffe14d","#181818","#e63946"],["Hospital mint","#bdf0dc","#0f2a24","#d62839"],["Blueprint","#1f3aa8","#ffffff","#ffe14d"],["Pink slip","#ffb8d0","#2a0f1c","#1d4ed8"],["Plain paper","#f6f6f1","#111111","#ff5a1f"],["Midnight","#14161f","#f1f1f1","#7cff6b"],["Peach","#ffc9a3","#2b160a","#0b7a75"],["Lilac","#d5c8ff","#1a1033","#e11d48"]];
 // Poses: [left upper arm, left forearm, right upper arm, right forearm, left leg, right leg], degrees (0 = down, 180 = up)
 const P={st:[-15,-10,15,10,-8,8],sh:[-70,-160,70,160,-8,8],pt:[-40,40,80,85,-8,8],cr:[-30,100,30,-100,-8,8],fp:[-20,-10,25,200,-8,8],rn:[-60,-130,60,20,-40,50],ch:[-150,-170,150,170,-12,12],hp:[-45,40,45,-40,-12,12],lc:[-20,-10,60,150,-8,8],sl:[-5,-3,5,3,-3,3]};
-const FONT='"Marker Felt","Chalkboard SE","Comic Sans MS","Segoe Print","Bradley Hand",cursive';
+const FONT='"Helvetica Neue",Arial,"Segoe UI",Roboto,sans-serif';
 const H=s=>{let h=7;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h;};
 const FACES={A:"fs",J:"fswd",L:"fs",S:"sf",R:"sf",C:"a"},POSES=Object.keys(P);
 const PROPS=["-","mug","phone","book","cloud","bulb","zzz","clock","plant","laptop","coin","-","-"];
@@ -79,7 +79,7 @@ function draw(){
   const m=fit(x,main.trim(),900,Hm-170-(hasSub?60:0),tall?96:84);
   x.fillStyle=ink;x.textAlign="center";x.font=`bold ${m.s}px ${FONT}`;
   m.lines.forEach((l,i)=>x.fillText(l,W/2,160+m.s+i*m.s*1.15));
-  if(hasSub){x.font=`italic ${Math.round(m.s*.45)}px ${FONT}`;x.globalAlpha=.8;x.fillText(sub.trim(),W/2,160+m.s+m.lines.length*m.s*1.15+10);x.globalAlpha=1;}
+  if(hasSub){x.font=`${Math.round(m.s*.45)}px ${FONT}`;x.globalAlpha=.8;x.fillText(sub.trim(),W/2,160+m.s+m.lines.length*m.s*1.15+10);x.globalAlpha=1;}
   // figure
   const S=tall?1.12:0.88;x.save();x.translate(W/2+(["clock","coin"].includes(cur.pr)?-40:0),Hm+185*S);x.scale(S,S);fig(x,cur,ink,ac,bg);x.restore();
   // footer

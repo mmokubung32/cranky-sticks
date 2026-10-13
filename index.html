@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cranky Sticks</title>
+<meta name="description" content="500 grumpy stick figure posters: advice, jokes, lessons, satire and sarcasm. Download as PNG.">
+<meta name="theme-color" content="#ffe14d">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='22' r='14' fill='none' stroke='black' stroke-width='7'/><path d='M50 36V70M20 50L50 44L80 50M50 70L32 94M50 70L68 94' stroke='black' stroke-width='7' fill='none' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Cranky Sticks</h1>
+  <p>500 tired stick figures with opinions. Pick one, edit the words, download the poster.</p>
+</header>
+<main>
+  <div class="stage"><canvas id="cv" aria-label="Poster preview"></canvas></div>
+  <section class="ctl">
+    <div class="nav">
+      <button id="prev" aria-label="Previous template">Back</button>
+      <button id="surp" class="hot">Surprise me</button>
+      <button id="next" aria-label="Next template">Next</button>
+    </div>
+    <label>Type<select id="cat"></select></label>
+    <label>Template<select id="tpl"></select></label>
+    <label>Your words (edit freely, use ~ for a small second line)
+      <textarea id="txt" rows="3" maxlength="140"></textarea>
+    </label>
+    <div class="two">
+      <label>Colours<select id="pal"></select></label>
+      <label>Shape<select id="fmt"><option value="tall">Tall 4:5</option><option value="sq">Square 1:1</option></select></label>
+    </div>
+    <div class="nav">
+      <button id="dl" class="hot">Download PNG</button>
+      <button id="share">Share</button>
+      <button id="copy">Copy text</button>
+    </div>
+    <p id="msg" class="msg" role="status"></p>
+  </section>
+</main>
+<footer>Cranky Sticks is satire. Any resemblance to your Monday is intentional.</footer>
+<script src="data.js"></script>
+<script src="data2.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
